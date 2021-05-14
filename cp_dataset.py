@@ -83,6 +83,10 @@ class CPDataset(data.Dataset):
         parse_shape = Image.fromarray((parse_shape*255).astype(np.uint8))
         parse_shape = parse_shape.resize((self.fine_width//16, self.fine_height//16), Image.BILINEAR)
         parse_shape = parse_shape.resize((self.fine_width, self.fine_height), Image.BILINEAR)
+        
+        # FIX
+        self.transform = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.5,), (0.5,))])
+        
         shape = self.transform(parse_shape) # [-1,1]
         phead = torch.from_numpy(parse_head) # [0,1]
         pcm = torch.from_numpy(parse_cloth) # [0,1]
@@ -197,4 +201,3 @@ if __name__ == "__main__":
     first_batch = data_loader.next_batch()
 
     from IPython import embed; embed()
-
