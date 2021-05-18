@@ -2,7 +2,6 @@
 .DS_Store
 tensorboard/*
 data/train/*
-data/test/*
 log/*
 *.sh
 result/*/*
