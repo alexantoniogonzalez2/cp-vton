@@ -4,4 +4,3 @@ tensorboard/*
 data/train/*
 log/*
 *.sh
-result/*/*
