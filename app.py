@@ -10,9 +10,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    os.system('python test.py --name gmm_traintest_new --stage GMM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/gmm_train_new/gmm_final.pth')
+    os.system('python test.py --name tom_test_new --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/tom_train_new/tom_final.pth')
 
     return render_template('home.html')
+
+@app.route('/data/<path:filepath>')
+def data(filepath):
+    return send_from_directory('result/tom_final.pth/test/try-on', filepath)
 
 @app.route('/predict/', methods=['GET','POST'])
 def predict():
