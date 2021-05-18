@@ -19,7 +19,7 @@ six==1.16.0
 sklearn==0.0
 tensorboardX==1.7
 threadpoolctl==2.1.0
-torch==1.8.1
+torch==1.0.0
 torchvision==0.9.1
 typing-extensions==3.10.0.0
 Werkzeug==2.0.0
