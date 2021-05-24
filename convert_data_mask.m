@@ -1,6 +1,6 @@
 function convert_data_mask()
 	pkg('load', 'image');
-	pkg('load', 'jsonstuff');
+	%pkg('load', 'jsonstuff');
 	source_root_dir = 'data/test';
 	target_root_dir = 'data/test';
 	flag_resize = true;
